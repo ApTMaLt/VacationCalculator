@@ -41,7 +41,7 @@ public class VacationPayService {
         if (request.getVacationDateStart() != null && request.getVacationDateEnd() != null) {
             int days = isDayOffClient.countPaidDays(request.getVacationDateStart(), request.getVacationDateEnd());
             if (days <= 0) {
-                throw new IllegalArgumentException("Отпуск не может состоять только из праздников и выходных");
+                throw new IllegalArgumentException("Отпуск не может состоять только из праздников");
             }
             return days;
         } else {
@@ -72,5 +72,5 @@ public class VacationPayService {
         }
     }
 
-
+//TODO Написать unit-тесты
 }

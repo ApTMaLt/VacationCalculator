@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.jetbrains.annotations.NotNull;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -22,8 +23,9 @@ public class VacationRequest {
     @Min(value = 1, message = "Количество дней должно быть не меньше 1")
     private Integer vacationDays;
 
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private LocalDate vacationDateStart;
 
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private LocalDate vacationDateEnd;
-    //TODO в запросе может быть ещё и дни начала и окончания отпуска
 }
