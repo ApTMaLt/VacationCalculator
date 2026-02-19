@@ -36,6 +36,10 @@ public class IsDayOffClient {
         return cache.computeIfAbsent(cacheKey, k -> fetchFromApi(startDate, endDate));
     }
 
+    public static int getMaxPeriodDays() {
+        return MAX_PERIOD_DAYS;
+    }
+
     private @NotNull Map<LocalDate, DayInfo> fetchFromApi(LocalDate startDate, LocalDate endDate) {
         validatePeriod(startDate, endDate);
 

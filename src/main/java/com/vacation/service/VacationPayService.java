@@ -72,5 +72,4 @@ public class VacationPayService {
         }
     }
 
-//TODO Написать unit-тесты
 }

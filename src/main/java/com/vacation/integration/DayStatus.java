@@ -30,7 +30,7 @@ public enum DayStatus {
     }
 
     public static DayStatus fromCode(int code) {
-        if (code >= 100) {
+        if (code == 100 || code == 101 ||  code == 199) {
             throw new RuntimeException("Ошибка API isdayoff.ru: " + code);
         }
         for (DayStatus status : DayStatus.values()) {
