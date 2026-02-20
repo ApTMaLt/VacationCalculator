@@ -30,8 +30,8 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<Map<String, Object>> handleGenericException(ExceptionHandler ex) {
-        return buildErrorResponse(HttpStatus.INTERNAL_SERVER_ERROR, "Внутрення ошибка сервера");
+    public ResponseEntity<Map<String, Object>> handleGenericException(Exception ex) {
+        return buildErrorResponse(HttpStatus.INTERNAL_SERVER_ERROR, "Внутренняя ошибка сервера");
     }
 
     private ResponseEntity<Map<String, Object>> buildErrorResponse(HttpStatus status, String message) {

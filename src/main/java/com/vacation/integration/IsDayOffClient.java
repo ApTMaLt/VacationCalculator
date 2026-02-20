@@ -20,7 +20,7 @@ public class IsDayOffClient {
     private static final Logger log = LoggerFactory.getLogger(IsDayOffClient.class);
 
     private static final String API_URL = "https://isdayoff.ru/api/getdata";
-    private static final String DELIMETER = "%0A";
+    private static final String DELIMITER = "%0A";
     private static final int MAX_PERIOD_DAYS = 366;
 
     private final Map<String, Map<LocalDate, DayInfo>> cache = new ConcurrentHashMap<>();
@@ -67,7 +67,7 @@ public class IsDayOffClient {
         }
         Map<LocalDate, DayInfo> result = new LinkedHashMap<>();
 
-        String[] lines = response.split(DELIMETER);
+        String[] lines = response.split(DELIMITER);
 
         LocalDate date = startDate;
 
@@ -95,7 +95,7 @@ public class IsDayOffClient {
         String formattedStartDate = startDate.format(java.time.format.DateTimeFormatter.ofPattern("yyyyMMdd"));
         String formattedEndDate = endDate.format(java.time.format.DateTimeFormatter.ofPattern("yyyyMMdd"));
 
-        String url = String.format("%s?date1=%s&date2=%s&delimeter=%s", API_URL, formattedStartDate, formattedEndDate, DELIMETER);
+        String url = String.format("%s?date1=%s&date2=%s&delimeter=%s", API_URL, formattedStartDate, formattedEndDate, DELIMITER);
 
         log.debug("Вызов Api:{}", url);
 
