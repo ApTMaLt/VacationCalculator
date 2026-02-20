@@ -26,10 +26,6 @@ RUN gradle bootJar --no-daemon
 # ==================================================================
 FROM eclipse-temurin:21-jre-alpine
 
-# Метаданные
-LABEL maintainer="your.name@example.com"
-LABEL description="VacationCalculator Service"
-
 # Установка рабочей директории
 WORKDIR /app
 
